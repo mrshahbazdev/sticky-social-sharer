@@ -1,28 +1,42 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Current page ka URL aur Title hasil karein
     const pageUrl = encodeURIComponent(window.location.href);
     const pageTitle = encodeURIComponent(document.title);
+    
+    // Pinterest ke liye pehli image find karein
+    let postImage = document.querySelector('.entry-content img, .post-content img, .article-content img, article img');
+    const mediaUrl = postImage ? encodeURIComponent(postImage.src) : '';
 
-    // Social media links ke elements ko select karein
-    const facebookLink = document.querySelector('.sss-facebook');
-    const twitterLink = document.querySelector('.sss-twitter');
-    const linkedinLink = document.querySelector('.sss-linkedin');
-    const whatsappLink = document.querySelector('.sss-whatsapp');
+    const icons = document.querySelectorAll('.sss-icon');
 
-    // Har link ka href attribute set karein
-    if (facebookLink) {
-        facebookLink.href = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
-    }
+    icons.forEach(icon => {
+        let shareUrl = '#';
 
-    if (twitterLink) {
-        twitterLink.href = `https://twitter.com/intent/tweet?url=${pageUrl}&text=${pageTitle}`;
-    }
+        if (icon.classList.contains('sss-facebook')) {
+            shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`;
+        } 
+        else if (icon.classList.contains('sss-x')) {
+            shareUrl = `https://twitter.com/intent/tweet?url=${pageUrl}&text=${pageTitle}`;
+        }
+        else if (icon.classList.contains('sss-linkedin')) {
+            shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${pageUrl}&title=${pageTitle}`;
+        }
+        else if (icon.classList.contains('sss-whatsapp')) {
+            shareUrl = `https://api.whatsapp.com/send?text=${pageTitle}%20${pageUrl}`;
+        }
+        else if (icon.classList.contains('sss-pinterest')) {
+            if (mediaUrl) {
+                shareUrl = `https://pinterest.com/pin/create/button/?url=${pageUrl}&media=${mediaUrl}&description=${pageTitle}`;
+            } else {
+                icon.style.display = 'none';
+            }
+        }
+        else if (icon.classList.contains('sss-reddit')) {
+            shareUrl = `https://www.reddit.com/submit?url=${pageUrl}&title=${pageTitle}`;
+        }
+        else if (icon.classList.contains('sss-telegram')) {
+            shareUrl = `https://t.me/share/url?url=${pageUrl}&text=${pageTitle}`;
+        }
 
-    if (linkedinLink) {
-        linkedinLink.href = `https://www.linkedin.com/shareArticle?mini=true&url=${pageUrl}&title=${pageTitle}`;
-    }
-
-    if (whatsappLink) {
-        whatsappLink.href = `https://api.whatsapp.com/send?text=${pageTitle}%20${pageUrl}`;
-    }
+        icon.href = shareUrl;
+    });
 });

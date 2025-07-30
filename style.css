@@ -1,4 +1,4 @@
-/* --- Desktop Styling (769px and above) --- */
+/* --- Desktop Sticky Bar --- */
 .sss-container {
     position: fixed;
     top: 50%;
@@ -8,14 +8,8 @@
     flex-direction: column;
 }
 
- 
-.sss-position-left {
-    left: 20px;
-}
-
-.sss-position-right {
-    right: 20px;
-}
+.sss-position-left { left: 20px; }
+.sss-position-right { right: 20px; }
 
 .sss-icon {
     display: flex;
@@ -28,28 +22,39 @@
     color: #fff;
     font-size: 20px;
     text-decoration: none;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.sss-icon:hover { transform: scale(1.1); }
+
+/* --- Shortcode Styles --- */
+.sss-shortcode-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start;
+    align-items: center;
+}
+.sss-shortcode-container .sss-icon {
+    margin-bottom: 0;
 }
 
-.sss-icon:hover {
-    transform: scale(1.1);
-}
+/* --- Social Media Colors --- */
+.sss-facebook  { background-color: #1877F2; }
+.sss-x         { background-color: #000000; }
+.sss-linkedin  { background-color: #0A66C2; }
+.sss-whatsapp  { background-color: #25D366; }
+.sss-pinterest { background-color: #E60023; }
+.sss-reddit    { background-color: #FF4500; }
+.sss-telegram  { background-color: #26A5E4; }
 
-/* Social Media Colors */
-.sss-facebook { background-color: #1877F2; }
-.sss-twitter { background-color: #1DA1F2; }
-.sss-linkedin { background-color: #0A66C2; }
-.sss-whatsapp { background-color: #25D366; }
-
-
-/* --- Mobile Responsive Styling (768px and below) --- */
+/* --- Mobile Responsive Styling (for sticky bar only) --- */
 @media (max-width: 768px) {
     .sss-container {
         flex-direction: row;
         justify-content: space-around;
         top: auto;
         bottom: 0;
-        left: 0; /* Mobile par hamesha full-width hoga */
+        left: 0;
         right: 0;
         width: 100%;
         padding: 10px 0;
@@ -57,17 +62,6 @@
         box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
         transform: none;
     }
-
-    /* Mobile par left/right position ki zaroorat nahi */
-    .sss-position-left,
-    .sss-position-right {
-        left: 0;
-        right: 0;
-    }
-
-    .sss-icon {
-        margin-bottom: 0;
-        width: 40px;
-        height: 40px;
-    }
+    .sss-position-left, .sss-position-right { left: 0; right: 0; }
+    .sss-container .sss-icon { margin-bottom: 0; width: 40px; height: 40px; }
 }

@@ -1,67 +1,69 @@
 # Sticky Social Sharer for WordPress
 
 ![License](https://img.shields.io/badge/license-GPL--2.0%20or%20later-blue.svg)
-![WordPress Plugin Version](https://img.shields.io/badge/version-1.1.0-brightgreen.svg)
+![WordPress Plugin Version](https://img.shields.io/badge/version-1.2.1-brightgreen.svg)
 ![Tested up to](https://img.shields.io/badge/WordPress-6.8-blue.svg)
 
-**Sticky Social Sharer** is a lightweight and fully responsive WordPress plugin that adds elegant, floating social sharing icons to your website. Boost your content's visibility by making it easy for visitors to share your posts on popular social networks.
+**Sticky Social Sharer** is a powerful, flexible, and lightweight WordPress plugin that adds elegant social sharing icons to your website. Boost your content's reach with highly customizable display options, including a sticky bar and an inline shortcode.
 
-The plugin provides a clean, sticky icon bar that remains visible as users scroll. It's designed to be unobtrusive on desktops and seamlessly adapts to a sleek, accessible bottom bar on mobile devices.
+Make it effortless for visitors to share your content on Facebook, X, LinkedIn, WhatsApp, Pinterest, and more. The plugin is designed for performance and a seamless user experience across all devices.
 
 ## Screenshot
 
 ![Sticky Social Sharer Screenshot](screenshot-1.png "Desktop and Mobile View of the Plugin")
-*(**Action Required:** Add a file named `screenshot-1.png` to your plugin folder to display a preview here.)*
+*(**Action Required:** Update `screenshot-1.png` to show the new settings panel and icons.)*
 
 ## Key Features
 
-* **Sticky & Floating:** Icons stay fixed on the screen, encouraging more shares.
-* **Position Control:** Easily set the icon bar to appear on the **left** or **right** side of the screen from the admin settings.
-* **Fully Responsive:** Delivers a great user experience on desktops, tablets, and mobile devices.
-* **Lightweight & Fast:** Built for performance, ensuring it won't slow down your site.
-* **Popular Networks Included:** Comes with share links for Facebook, Twitter, LinkedIn, and WhatsApp.
-* **Simple Setup:** No complex configurations needed. Just install, activate, and you're ready to go!
+* **Multiple Display Modes:** Choose between a **sticky (floating)** bar or display icons **inline** anywhere using a shortcode.
+* **Complete Control:** Enable or disable the entire sticky bar with a single click.
+* **Icon Management:** Select exactly which social networks you want to display from the settings panel.
+* **Position Control:** Set the sticky bar to the **left** or **right** side of the screen.
+* **More Networks:** Now supports Facebook, X, LinkedIn, WhatsApp, Pinterest, Reddit, and Telegram.
+* **Shortcode Ready:** Use `[sticky_social_sharer]` to place icons within your posts, pages, or widgets.
+* **Fully Responsive:** Delivers a perfect experience on desktops, tablets, and mobile devices.
 
 ## Installation
 
-1.  **Download:** Download the latest release as a `.zip` file from the [GitHub repository](https://github.com/mrshahbazdev/sticky-social-sharer/releases).
+1.  **Download:** Download the latest release as a `.zip` file from the repository.
 2.  **Go to WordPress Admin:** Log in to your WordPress dashboard and navigate to `Plugins > Add New`.
-3.  **Upload Plugin:** Click the `Upload Plugin` button at the top of the page.
-4.  **Choose & Install:** Select the downloaded `.zip` file and click `Install Now`.
-5.  **Activate:** Once the installation is complete, click `Activate Plugin`.
+3.  **Upload & Install:** Click `Upload Plugin`, select the downloaded `.zip` file, and click `Install Now`.
+4.  **Activate:** Once installation is complete, click `Activate Plugin`.
 
-## Configuration
+## Configuration & Usage
 
-After activation, you can configure the plugin's settings:
-1.  Navigate to `Settings > Sticky Social Sharer` in your WordPress dashboard.
-2.  Under the "Icon Position" section, choose either `Left Side` or `Right Side`.
-3.  Click `Save Changes`. The new position will be applied instantly to your live site.
+After activation, navigate to `Settings > Sticky Social Sharer` in your dashboard.
 
-## Frequently Asked Questions (FAQ)
+1.  **Main Settings:**
+    * **Enable Sticky Icons:** Check this box to enable the floating icon bar. Uncheck it to disable the bar completely.
+    * **Sticky Bar Position:** If the sticky bar is enabled, choose to display it on the `Left Side` or `Right Side`.
 
-**Q: How do I change the position of the icons?**
-A: You can easily switch the position between left and right by going to `Settings > Sticky Social Sharer` in your admin dashboard.
+2.  **Display Icons:**
+    * Check the boxes for each social network you want to make available for sharing. These settings apply to both the sticky bar and the shortcode.
 
-**Q: Can I add more social networks (e.g., Pinterest, Reddit)?**
-A: This feature is not available via the settings panel in the current version. However, you can extend the functionality by modifying the `sss_add_social_share_html()` function in the `sticky-social-sharer.php` file.
-
-**Q: The icons are not appearing. What should I do?**
-A: First, try clearing your browser cache and any caching plugins you might be using. If the issue persists, it could be a conflict with your theme or another plugin. Try deactivating other plugins one by one to identify the source of the conflict.
+3.  **Shortcode Usage:**
+    * To display the sharing icons at a specific location inside your content, simply add the following shortcode to your post, page, or a text widget: `[sticky_social_sharer]`
 
 ## Changelog
 
+### Version 1.2.1 - July 30, 2025
+* **Refactor:** Rebranded "Twitter" to "X" across the plugin, including the icon, color, and labels to match the new branding.
+
+### Version 1.2.0 - July 30, 2025
+* **Feature:** Added `[sticky_social_sharer]` shortcode to display icons inline.
+* **Feature:** Added a master switch to enable/disable the sticky bar.
+* **Feature:** Added a settings panel to manage which social icons are displayed.
+* **Feature:** Added new networks: Pinterest, Reddit, and Telegram.
+* **Improvement:** Refactored settings to save as a single array for better performance.
+* **Improvement:** Updated settings page UI with new options and interactivity.
+
 ### Version 1.1.0
-* **Feature:** Added a settings page in the admin panel to control icon position (left/right).
-* **Improvement:** Refactored CSS to dynamically apply position based on user settings.
-* **Docs:** Updated `README.md` with configuration instructions.
+* **Feature:** Added a settings page to control sticky bar position (left/right).
 
 ### Version 1.0.0
 * Initial release.
-* Sticky social sharing icons for Facebook, Twitter, LinkedIn, and WhatsApp.
-* Fully responsive design for mobile devices.
 
 ## Credits
 
 Developed and maintained by **Mr. Shahbaz**.
 * **GitHub Profile:** [mrshahbazdev](https://github.com/mrshahbazdev)
-* **Project Repository:** [Sticky Social Sharer](https://github.com/mrshahbazdev/sticky-social-sharer)
